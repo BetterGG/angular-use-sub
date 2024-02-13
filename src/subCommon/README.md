@@ -12,7 +12,7 @@ git subtree add --prefix=<存放子项目的相对路径> <子项目git地址> <
 
 例如：
 ```
-git subtree add --prefix=src/Common https://github.com/M76chao/Common.git master
+git subtree add --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 问题：
 遇见报错Working tree has modifications.  Cannot add.
@@ -35,7 +35,7 @@ git subtree push --prefix=<存放子项目的相对路径> <子项目git地址> 
 
 例如：
 ```
-git subtree push --prefix=src/Common https://github.com/M76chao/Common.git master
+git subtree push --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 
 ## 拉取子项目最新代码 pull
@@ -46,7 +46,7 @@ git subtree pull --prefix=<存放子项目的相对路径> <子项目git地址> 
 
 例如：
 ```
-git subtree pull --prefix=src/Common https://github.com/M76chao/Common.git master
+git subtree pull --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 
 ## 其他 git subtree split
@@ -63,7 +63,7 @@ git subtree split --prefix=<存放子项目的相对路径> --rejoin
 
 例如：
 ```
-git subtree split --prefix=src/Common --rejoin
+git subtree split --prefix=src/subCommon --rejoin
 ```
 
 
