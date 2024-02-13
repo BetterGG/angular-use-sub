@@ -50,6 +50,12 @@ git subtree pull --prefix=src/Common https://github.com/M76chao/Common.git maste
 ```
 
 ## 其他 git subtree split
+> git subtree split是一个Git命令，它允许你将一个Git仓库中的一个子目录拆分为一个独立的Git仓库，同时保留原有仓库中的文件夹层次结构。这个命令可以将子目录的提交历史提取出来，形成一个新的分支，这个分支可以推送到一个新的版本库中，从而实现用原版本库的一个子目录为根目录创建出新的版本库。 
+
+> 简单来说，git subtree split就是将一个大的Git仓库中的一个子目录拆分成一个独立的、可管理的Git仓库的过程。这个命令在需要进行模块化开发、将某个功能或模块独立出来或者需要共享某个子目录的代码时非常有用。 
+
+> 需要注意的是，在执行git subtree split命令之前，你需要确保子目录在Git历史中是连续的，没有与其他目录的合并或拆分操作。此外，你还需要指定一个新的分支名称来保存拆分后的子目录的提交历史。
+
 命令：
 ```
 git subtree split --prefix=<存放子项目的相对路径> --rejoin
