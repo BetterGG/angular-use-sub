@@ -1,52 +1,46 @@
 # angularCommonSubtreeOne
-angular项目的subtree
+> angular项目的subtree
 
-# 尝试公共组件
+## 简化远程子仓库地址
+```
+git remote add -f sub http://git.xxx.git
+```
 
-## 添加子项目
+
+## 添加子项目 subtree
+> 仅在新建项目或者首次添加 subtree 时，添加一次即可。
 
 命令：
 ```
+// 使用简化远程子仓库地址
+git remote add -f sub http://git.xxx.git
+eg：
+git subtree add --prefix=src/subTree sub master 
+// 添加 subtree，使用简化远程子仓库地址的方式
 git subtree add --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
-```
-
-例如：
-```
+eg: 
 git subtree add --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 问题：
 遇见报错Working tree has modifications.  Cannot add.
 先commit当前更改，再重新执行上述命令
 
-
 遇见报错：SSL certificate problem: unable to get local issuer certificate
 管理员命令行，执行`git config --system http.sslverify false`
 
-
-## 修改子项目代码
-在原项目中直接commit就行，无需其他特殊配置，建议子项目代码单独commit，不要跟外围代码一起提交
-
-## 推送子项目代码 push
-
-命令：
-```
-git subtree push --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
-```
-
-例如：
-```
-git subtree push --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
-```
-
 ## 拉取子项目最新代码 pull
-命令：
+> 如果 组件 仓库更新了，可以从源仓库拉取更新，使用 git subtree pull
 ```
 git subtree pull --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
+eg:
+git subtree pull --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 
-例如：
+## 推送子项目代码 push
 ```
-git subtree pull --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
+git subtree push --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
+eg:
+git subtree push --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 
 ## 其他 git subtree split
@@ -56,15 +50,14 @@ git subtree pull --prefix=src/subCommon https://github.com/BetterGG/angular-comm
 
 > 需要注意的是，在执行git subtree split命令之前，你需要确保子目录在Git历史中是连续的，没有与其他目录的合并或拆分操作。此外，你还需要指定一个新的分支名称来保存拆分后的子目录的提交历史。
 
-命令：
 ```
 git subtree split --prefix=<存放子项目的相对路径> --rejoin
-```
-
-例如：
-```
+eg:
 git subtree split --prefix=src/subCommon --rejoin
 ```
+
+## 修改子项目代码
+在原项目中直接commit就行，无需其他特殊配置，建议子项目代码单独commit，不要跟外围代码一起提交
 
 
 ## vite模块联邦问题总结
