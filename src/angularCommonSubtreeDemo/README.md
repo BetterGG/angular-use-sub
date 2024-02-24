@@ -19,7 +19,7 @@ git subtree add --prefix=src/subTree sub master
 // 添加 subtree，使用简化远程子仓库地址的方式
 git subtree add --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
 eg: 
-git subtree add --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
+git subtree add --prefix=src/angularCommonSubtreeDemo https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 问题：
 遇见报错Working tree has modifications.  Cannot add.
@@ -33,14 +33,14 @@ git subtree add --prefix=src/subCommon https://github.com/BetterGG/angular-commo
 ```
 git subtree pull --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
 eg:
-git subtree pull --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
+git subtree pull --prefix=src/angularCommonSubtreeDemo https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 
 ## 推送子项目代码 push
 ```
 git subtree push --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
 eg:
-git subtree push --prefix=src/subCommon https://github.com/BetterGG/angular-common-subtree-demo.git main
+git subtree push --prefix=src/angularCommonSubtreeDemo https://github.com/BetterGG/angular-common-subtree-demo.git main
 ```
 
 ## 其他 git subtree split
@@ -53,7 +53,7 @@ git subtree push --prefix=src/subCommon https://github.com/BetterGG/angular-comm
 ```
 git subtree split --prefix=<存放子项目的相对路径> --rejoin
 eg:
-git subtree split --prefix=src/subCommon --rejoin
+git subtree split --prefix=src/angularCommonSubtreeDemo --rejoin
 ```
 
 ## 修改子项目代码
