@@ -1,0 +1,3 @@
+[submodule "src/angularCommonSubmoduleDemo"]
+	path = src/angularCommonSubmoduleDemo
+	url = https://github.com/BetterGG/angular-common-submodule-demo.git
